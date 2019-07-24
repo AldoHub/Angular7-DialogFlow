@@ -1,0 +1,18 @@
+
+
+<form [formGroup] ="dialogForm" (ngSubmit)="sendMessage(dialogForm.value)">
+    <input type="text" placeholder="Type a message..." formControlName="message" />
+    <input type="submit" [disabled]="!dialogForm.valid" value="Send">
+</form>
+
+
+<div class="messages">
+    <div class="message" *ngFor="let msg of messages">
+      <div class={{msg.user}}>
+        <p class="user">{{msg.user}}</p>
+        <span class="timestamp">{{msg.timestamp}}</span>
+        <p class="content">{{msg.content}} </p>
+      </div>
+    </div>
+  </div>
+  
